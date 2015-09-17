@@ -20,17 +20,17 @@ jQuery(document).ready(function(){
 });
 
 function setVariables() {
-  proposed_price = $("#proposed-sale").val() != '' ? parseInt($("#proposed-sale").val()) : 0;
-  hp_motor = $('#hp-motor').val() != '' ? parseInt($("#hp-motor").val()) : 0;
-  energy_rate = $('#energy-rate').val() != '' ? parseInt($('#energy-rate').val()) : 0;
-  operational_run_time = $('#operational-run').val() != '' ? parseInt($('#operational-run').val()) : 0;
-  maintenance_labor_rate = $('#maintenance-labor').val() != '' ? parseInt($('#maintenance-labor').val()) : 0;
-  maintenance_man_hours = $('#maintenance-man').val() != '' ? parseInt($('#maintenance-man').val()) : 0;
-  operational_man_hours = $('#operational-man').val() != '' ? parseInt($('#operational-man').val()) : 0;
-  operation_labor_rate = $('#operation-labor').val() != '' ? parseInt($('#operation-labor').val()) : 0;
-  installation_man_hours = $('#installation-man').val() != '' ? parseInt($('#installation-man').val()) : 0;
-  installation_labor_rate = $('#installation-labor').val() != '' ? parseInt($('#installation-labor').val()) : 0;
-  interest_rate = $('#interest-rate').val() != '' ? parseInt($('#interest-rate').val()) : 0;
+  proposed_price = $("#proposed-sale").val() != '' ? parseFloat($("#proposed-sale").val()) : 0;
+  hp_motor = $('#hp-motor').val() != '' ? parseFloat($("#hp-motor").val()) : 0;
+  energy_rate = $('#energy-rate').val() != '' ? parseFloat($('#energy-rate').val()) : 0;
+  operational_run_time = $('#operational-run').val() != '' ? parseFloat($('#operational-run').val()) : 0;
+  maintenance_labor_rate = $('#maintenance-labor').val() != '' ? parseFloat($('#maintenance-labor').val()) : 0;
+  maintenance_man_hours = $('#maintenance-man').val() != '' ? parseFloat($('#maintenance-man').val()) : 0;
+  operational_man_hours = $('#operational-man').val() != '' ? parseFloat($('#operational-man').val()) : 0;
+  operation_labor_rate = $('#operation-labor').val() != '' ? parseFloat($('#operation-labor').val()) : 0;
+  installation_man_hours = $('#installation-man').val() != '' ? parseFloat($('#installation-man').val()) : 0;
+  installation_labor_rate = $('#installation-labor').val() != '' ? parseFloat($('#installation-labor').val()) : 0;
+  interest_rate = $('#interest-rate').val() != '' ? parseFloat($('#interest-rate').val()) : 0;
 }
 
 function calculateTotals(clicked_object)
