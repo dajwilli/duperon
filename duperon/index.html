@@ -1,455 +1,383 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Duperon</title>
+  <meta charset="UTF-8">
+  <title>Duperon Calculator</title>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="js/init.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  
+
+  
 </head>
-<body>
-  <div>
+<body ng-app="calculator">
+  
+  <div ng-controller="formController" class="wrapper">
+    <img src="img/logo.png">
+    <div>
 
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#duperon" aria-controls="duperon" role="tab" data-toggle="tab">Duperon</a></li>
-      <li role="presentation"><a href="#headworks" aria-controls="headworkds" role="tab" data-toggle="tab">Headworks</a></li>
-      <li role="presentation"><a href="#vulcan" aria-controls="vulcan" role="tab" data-toggle="tab">Vulcan</a></li>
-      <li role="presentation"><a href="#huber" aria-controls="huber" role="tab" data-toggle="tab">Huber</a></li>
-      <li role="presentation"><a href="#hydro-dyne" aria-controls="hydro-dyne" role="tab" data-toggle="tab">Hydro-Dyne</a></li>
-    </ul>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li ng-click="reset()" role="presentation" class="active"><a href="#duperon" aria-controls="duperon" role="tab" data-toggle="tab">Duperon</a></li>
+        <li ng-click="reset()" role="presentation"><a href="#headworks" aria-controls="headworks" role="tab" data-toggle="tab">Headworks</a></li>
+        <li ng-click="reset()" role="presentation"><a href="#vulcan" aria-controls="vulcan" role="tab" data-toggle="tab">Vulcan</a></li>
+        <li ng-click="reset()" role="presentation"><a href="#huber" aria-controls="huber" role="tab" data-toggle="tab">Huber</a></li>
+        <li ng-click="reset()" role="presentation"><a href="#hydro-dyne" aria-controls="hydro-dyne" role="tab" data-toggle="tab">Hydro-Dyne</a></li>
+      </ul>
 
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="duperon">
-        <h1>Duperon</h1>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Proposed Sale Price</label>
-            <input type="text" class="form-control" id="proposed-sale" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">HP Motor</label>
-            <input type="text" class="form-control" id="hp-motor" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Energy Rate</label>
-            <input type="text" class="form-control" id="energy-rate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Run Time per Day</label>
-            <input type="text" class="form-control" id="operational-run">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="maintenance-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Man Hours per Month</label>
-            <input type="text" class="form-control" id="maintenance-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Man Hours per Day</label>
-            <input type="text" class="form-control" id="operational-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="operation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Man Hours</label>
-            <input type="text" class="form-control" id="installation-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="installation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Interest Rate</label>
-            <input type="text" class="form-control" id="interest-rate">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="duperon"></div>
+        <div role="tabpanel" class="tab-pane" id="headworks"></div>
+        <div role="tabpanel" class="tab-pane" id="vulcan"></div>
+        <div role="tabpanel" class="tab-pane" id="huber"></div>
+        <div role="tabpanel" class="tab-pane" id="hydro-dyne"></div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="headworks">
-        <h1>Headworks</h1>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Proposed Sale Price</label>
-            <input type="text" class="form-control" id="proposed-sale" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">HP Motor</label>
-            <input type="text" class="form-control" id="hp-motor" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Energy Rate</label>
-            <input type="text" class="form-control" id="energy-rate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Run Time per Day</label>
-            <input type="text" class="form-control" id="operational-run">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="maintenance-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Man Hours per Month</label>
-            <input type="text" class="form-control" id="maintenance-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Man Hours per Day</label>
-            <input type="text" class="form-control" id="operational-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="operation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Man Hours</label>
-            <input type="text" class="form-control" id="installation-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="installation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Interest Rate</label>
-            <input type="text" class="form-control" id="interest-rate">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="vulcan">
-        <h1>Vulcan</h1>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Proposed Sale Price</label>
-            <input type="text" class="form-control" id="proposed-sale" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">HP Motor</label>
-            <input type="text" class="form-control" id="hp-motor" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Energy Rate</label>
-            <input type="text" class="form-control" id="energy-rate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Run Time per Day</label>
-            <input type="text" class="form-control" id="operational-run">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="maintenance-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Man Hours per Month</label>
-            <input type="text" class="form-control" id="maintenance-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Man Hours per Day</label>
-            <input type="text" class="form-control" id="operational-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="operation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Man Hours</label>
-            <input type="text" class="form-control" id="installation-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="installation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Interest Rate</label>
-            <input type="text" class="form-control" id="interest-rate">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="huber">
-        <h1>Huber</h1>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Proposed Sale Price</label>
-            <input type="text" class="form-control" id="proposed-sale" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">HP Motor</label>
-            <input type="text" class="form-control" id="hp-motor" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Energy Rate</label>
-            <input type="text" class="form-control" id="energy-rate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Run Time per Day</label>
-            <input type="text" class="form-control" id="operational-run">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="maintenance-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Man Hours per Month</label>
-            <input type="text" class="form-control" id="maintenance-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Man Hours per Day</label>
-            <input type="text" class="form-control" id="operational-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="operation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Man Hours</label>
-            <input type="text" class="form-control" id="installation-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="installation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Interest Rate</label>
-            <input type="text" class="form-control" id="interest-rate">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="hydro-dyne">
-        <h1>Hydro-Dyne</h1>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Proposed Sale Price</label>
-            <input type="text" class="form-control" id="proposed-sale" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">HP Motor</label>
-            <input type="text" class="form-control" id="hp-motor" data-name="hp_motor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Energy Rate</label>
-            <input type="text" class="form-control" id="energy-rate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Run Time per Day</label>
-            <input type="text" class="form-control" id="operational-run">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="maintenance-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Maintenance Man Hours per Month</label>
-            <input type="text" class="form-control" id="maintenance-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Man Hours per Day</label>
-            <input type="text" class="form-control" id="operational-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Operational Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="operation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Man Hours</label>
-            <input type="text" class="form-control" id="installation-man">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Installation Labor Rate per Hour</label>
-            <input type="text" class="form-control" id="installation-labor">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Interest Rate</label>
-            <input type="text" class="form-control" id="interest-rate">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
+
     </div>
+    <form novalidate>
+      <div class="input-fields">
+        <div class="form-group col-sm-6">
+          <label>Proposed Price:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.proposed_price" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>HP Motor:</label><br /> 
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.hp_motor" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Energy Rate:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.energy_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Operational Run Time per Day:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.operational_run_time" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Maintenance Labor Rate per Hour:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.maintenance_labor_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Maintenance Man Hours per Month:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.maintenance_man_hours" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Operational Man Hours per Day:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.operational_man_hours" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Operational Labor Rate per Day:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.operational_labor_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Installation Man Hours:</label>
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.installation_man_hours" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Installation Labor Rate per Hour:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.installation_labor_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Interest Rate:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.interest_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Unscheduled Maintenance Labor Cost:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.unscheduled_maintenance_labor_rate" />
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Annual Maintenance Parts Cost:</label><br />
+          <input class="form-control" type="number" ng-keyup="calculate()" ng-model="val.annual_maintenance" />
+        </div>
+      </div>
 
+      <div class="actions pull-right">
+        <button class="btn btn-default" type="button" ng-click="reset()">Clear</button>
+        <button class="btn btn-primary" type="submit" ng-click="calculate()"><a href="#app-table">Calculate</a></button>
+      </div>
+      
+    </form>
+    <div class="table-wrapper col-sm-12" id="">
+      <table class="table table-bordered" id="app-table">
+        <thead>
+          <tr>
+            <th><b>Years</b></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>19</th>
+            <th>20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="21" class="td-header"><b>Aquisition Costs</b></td>
+          </tr>
+          <tr>
+            <td>Initial Capital Cost</td>
+            <td class="icc 1" id="">{{val.proposed_price | currency}}</td>
+            <td class="icc 2" id=""></td>
+            <td class="icc 3" id=""></td>
+            <td class="icc 4" id=""></td>
+            <td class="icc 5" id=""></td>
+            <td class="icc 6" id=""></td>
+            <td class="icc 7" id=""></td>
+            <td class="icc 8" id=""></td>
+            <td class="icc 9" id=""></td>
+            <td class="icc 10" id=""></td>
+            <td class="icc 11" id=""></td>
+            <td class="icc 12" id=""></td>
+            <td class="icc 13" id=""></td>
+            <td class="icc 14" id=""></td>
+            <td class="icc 15" id=""></td>
+            <td class="icc 16" id=""></td>
+            <td class="icc 17" id=""></td>
+            <td class="icc 18" id=""></td>
+            <td class="icc 19" id=""></td>
+            <td class="icc 20" id=""></td>
+          </tr>
+          <tr>
+            <td>Installation Labor Costs</td>
+            <td class="ilc 1" id="">{{val.installation_man_hours * val.installation_labor_rate | currency}}</td>
+            <td class="ilc 2" id=""></td>
+            <td class="ilc 3" id=""></td>
+            <td class="ilc 4" id=""></td>
+            <td class="ilc 5" id=""></td>
+            <td class="ilc 6" id=""></td>
+            <td class="ilc 7" id=""></td>
+            <td class="ilc 8" id=""></td>
+            <td class="ilc 9" id=""></td>
+            <td class="ilc 10" id=""></td>
+            <td class="ilc 11" id=""></td>
+            <td class="ilc 12" id=""></td>
+            <td class="ilc 13" id=""></td>
+            <td class="ilc 14" id=""></td>
+            <td class="ilc 15" id=""></td>
+            <td class="ilc 16" id=""></td>
+            <td class="ilc 17" id=""></td>
+            <td class="ilc 18" id=""></td>
+            <td class="ilc 19" id=""></td>
+            <td class="ilc 20" id=""></td>
+          </tr>
+          <tr>
+            <td colspan="21" class="td-header"><b>Operation Costs</b></td>
+          </tr>
+          <tr>
+            <td>Scheduled Maintenance Labor Cost</td>
+            <td class="smlc 1" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 2" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 3" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 4" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 5" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 6" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 7" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 8" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 9" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 10" id="">{{((12 * val.maintenance_man_hours) + 8) * val.maintenance_labor_rate | currency}}</td>
+            <td class="smlc 11" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 12" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 13" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 14" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 15" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 16" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 17" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 18" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 19" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+            <td class="smlc 20" id="">{{12 * val.maintenance_labor_rate * val.maintenance_man_hours | currency}}</td>
+          </tr>
+          <tr>
+            <td>Unscheduled Maintenance Labor Cost</td>
+            <td class="umlc 1" id=""></td>
+            <td class="umlc 2" id=""></td>
+            <td class="umlc 3" id=""></td>
+            <td class="umlc 4" id=""></td>
+            <td class="umlc 5" id=""></td>
+            <td class="umlc 6" id=""></td>
+            <td class="umlc 7" id=""></td>
+            <td class="umlc 8" id=""></td>
+            <td class="umlc 9" id=""></td>
+            <td class="umlc 10" id="">{{val.unscheduled_maintenance_labor_rate | currency}}</td>
+            <td class="umlc 11" id=""></td>
+            <td class="umlc 12" id=""></td>
+            <td class="umlc 13" id=""></td>
+            <td class="umlc 14" id=""></td>
+            <td class="umlc 15" id=""></td>
+            <td class="umlc 16" id=""></td>
+            <td class="umlc 17" id=""></td>
+            <td class="umlc 18" id=""></td>
+            <td class="umlc 19" id=""></td>
+            <td class="umlc 20" id=""></td>
+          </tr>
+          <tr>
+            <td>Operation Labor Cost</td>
+            <td class="olc 1" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 2" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 3" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 4" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 5" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 6" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 7" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 8" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 9" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 10" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 11" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 12" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 13" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 14" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 15" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 16" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 17" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 18" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 19" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+            <td class="olc 20" id="">{{365 * val.operational_labor_rate * val.operational_man_hours | currency}}</td>
+          </tr>
+          <tr>
+            <td>Energy Cost</td>
+            <td class="ec 1" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 2" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 3" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 4" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 5" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 6" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 7" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 8" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 9" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 10" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 11" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 12" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 13" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 14" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 15" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 16" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 17" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 18" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 19" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+            <td class="ec 20" id="">{{365 * val.energy_rate * val.operational_run_time | currency}}</td>
+          </tr>
+          <tr>
+            <td colspan="21" class="td-header"><b>Service Costs</b></td>
+          </tr>
+          <tr>
+            <td>Annual Maintenance Parts Cost</td>
+            <td class="ampc 1" id=""></td>
+            <td class="ampc 2" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 3" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 4" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 5" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 6" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 7" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 8" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 9" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 10" id="duperon-set-cost">
+              {{val.annual_maintenance | currency}}
+            </td>
+            <td class="ampc 11" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 12" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 13" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 14" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 15" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 16" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 17" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 18" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 19" id="">{{val.annual_maintenance | currency}}</td>
+            <td class="ampc 20" id="">{{val.annual_maintenance | currency}}</td>
+          </tr>
+          <tr>
+            <td><b>Total Costs</b></td>
+            <td class="tc 1" id="">{{costs[0] | currency}}</td>
+            <td class="tc 2" id="">{{costs[1] | currency}}</td>
+            <td class="tc 3" id="">{{costs[2] | currency}}</td>
+            <td class="tc 4" id="">{{costs[3] | currency}}</td>
+            <td class="tc 5" id="">{{costs[4] | currency}}</td>
+            <td class="tc 6" id="">{{costs[5] | currency}}</td>
+            <td class="tc 7" id="">{{costs[6] | currency}}</td>
+            <td class="tc 8" id="">{{costs[7] | currency}}</td>
+            <td class="tc 9" id="">{{costs[8] | currency}}</td>
+            <td class="tc 10" id="">{{costs[9] | currency}}</td>
+            <td class="tc 11" id="">{{costs[10] | currency}}</td>
+            <td class="tc 12" id="">{{costs[11] | currency}}</td>
+            <td class="tc 13" id="">{{costs[12] | currency}}</td>
+            <td class="tc 14" id="">{{costs[13] | currency}}</td>
+            <td class="tc 15" id="">{{costs[14] | currency}}</td>
+            <td class="tc 16" id="">{{costs[15] | currency}}</td>
+            <td class="tc 17" id="">{{costs[16] | currency}}</td>
+            <td class="tc 18" id="">{{costs[17] | currency}}</td>
+            <td class="tc 19" id="">{{costs[18] | currency}}</td>
+            <td class="tc 20" id="">{{costs[19] | currency}}</td>
+          </tr>
+          <tr>
+            <td>Present Value</td>
+            <td class="pv 1" id="">{{present_values[0] | currency}}</td>
+            <td class="pv 2" id="">{{present_values[1] | currency}}</td>
+            <td class="pv 3" id="">{{present_values[2] | currency}}</td>
+            <td class="pv 4" id="">{{present_values[3] | currency}}</td>
+            <td class="pv 5" id="">{{present_values[4] | currency}}</td>
+            <td class="pv 6" id="">{{present_values[5] | currency}}</td>
+            <td class="pv 7" id="">{{present_values[6] | currency}}</td>
+            <td class="pv 8" id="">{{present_values[7] | currency}}</td>
+            <td class="pv 9" id="">{{present_values[8] | currency}}</td>
+            <td class="pv 10" id="">{{present_values[9] | currency}}</td>
+            <td class="pv 11" id="">{{present_values[10] | currency}}</td>
+            <td class="pv 12" id="">{{present_values[11] | currency}}</td>
+            <td class="pv 13" id="">{{present_values[12] | currency}}</td>
+            <td class="pv 14" id="">{{present_values[13] | currency}}</td>
+            <td class="pv 15" id="">{{present_values[14] | currency}}</td>
+            <td class="pv 16" id="">{{present_values[15] | currency}}</td>
+            <td class="pv 17" id="">{{present_values[16] | currency}}</td>
+            <td class="pv 18" id="">{{present_values[17] | currency}}</td>
+            <td class="pv 19" id="">{{present_values[18] | currency}}</td>
+            <td class="pv 20" id="">{{present_values[19] | currency}}</td>
+          </tr>
+          <tr>
+            <td>Total Cost of Ownership</td>
+            <td class="tco 1" id="">{{ownership_cost | currency}}</td>
+            <td class="tco 2" id=""></td>
+            <td class="tco 3" id=""></td>
+            <td class="tco 4" id=""></td>
+            <td class="tco 5" id=""></td>
+            <td class="tco 6" id=""></td>
+            <td class="tco 7" id=""></td>
+            <td class="tco 8" id=""></td>
+            <td class="tco 9" id=""></td>
+            <td class="tco 10" id=""></td>
+            <td class="tco 11" id=""></td>
+            <td class="tco 12" id=""></td>
+            <td class="tco 13" id=""></td>
+            <td class="tco 14" id=""></td>
+            <td class="tco 15" id=""></td>
+            <td class="tco 16" id=""></td>
+            <td class="tco 17" id=""></td>
+            <td class="tco 18" id=""></td>
+            <td class="tco 19" id=""></td>
+            <td class="tco 20" id=""></td>
+          </tr>
+          <tr>
+            <td>Present Value of Total Cost of Ownership</td>
+            <td class="tco 1" id="">{{ownership_present_value | currency}}</td>
+          </tr>
+        </tbody>
+      <table>  
+    </div>
+    
   </div>
-
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th></th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-        <th>13</th>
-        <th>14</th>
-        <th>15</th>
-        <th>16</th>
-        <th>17</th>
-        <th>18</th>
-        <th>19</th>
-        <th>20</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="21"><b>Aquisition Costs</b></td>
-      </tr>
-      <tr>
-        <td>Initial Capital Cost</td>
-        <td class="icc" id="1"></td>
-        <td class="icc" id="2"></td>
-        <td class="icc" id="3"></td>
-        <td class="icc" id="4"></td>
-        <td class="icc" id="5"></td>
-        <td class="icc" id="6"></td>
-        <td class="icc" id="7"></td>
-        <td class="icc" id="8"></td>
-        <td class="icc" id="9"></td>
-        <td class="icc" id="10"></td>
-        <td class="icc" id="11"></td>
-        <td class="icc" id="12"></td>
-        <td class="icc" id="13"></td>
-        <td class="icc" id="14"></td>
-        <td class="icc" id="15"></td>
-        <td class="icc" id="16"></td>
-        <td iclass="icc" d="17"></td>
-        <td class="icc" id="18"></td>
-        <td iclass="icc" d="19"></td>
-        <td class="icc" id="20"></td>
-      </tr>
-      <tr>
-        <td>Installation Labor Costs</td>
-        <td class="ilc" id="1"></td>
-        <td class="ilc" id="2"></td>
-        <td class="ilc" id="3"></td>
-        <td class="ilc" id="4"></td>
-        <td class="ilc" id="5"></td>
-        <td class="ilc" id="6"></td>
-        <td class="ilc" id="7"></td>
-        <td class="ilc" id="8"></td>
-        <td class="ilc" id="9"></td>
-        <td class="ilc" id="10"></td>
-        <td class="ilc" id="11"></td>
-        <td class="ilc" id="12"></td>
-        <td class="ilc" id="13"></td>
-        <td class="ilc" id="14"></td>
-        <td class="ilc" id="15"></td>
-        <td class="ilc" id="16"></td>
-        <td class="ilc" id="17"></td>
-        <td class="ilc" id="18"></td>
-        <td class="ilc" id="19"></td>
-        <td class="ilc" id="20"></td>
-      </tr>
-      <tr>
-        <td colspan="21"><b>Operation Costs</b></td>
-      </tr>
-      <tr>
-        <td>Scheduled Maintenance Labor Cost</td>
-        <td class="smlc" id="1"></td>
-        <td class="smlc" id="2"></td>
-        <td class="smlc" id="3"></td>
-        <td class="smlc" id="4"></td>
-        <td class="smlc" id="5"></td>
-        <td class="smlc" id="6"></td>
-        <td class="smlc" id="7"></td>
-        <td class="smlc" id="8"></td>
-        <td class="smlc" id="9"></td>
-        <td class="smlc" id="10"></td>
-        <td class="smlc" id="11"></td>
-        <td class="smlc" id="12"></td>
-        <td class="smlc" id="13"></td>
-        <td class="smlc" id="14"></td>
-        <td class="smlc" id="15"></td>
-        <td class="smlc" id="16"></td>
-        <td class="smlc" id="17"></td>
-        <td class="smlc" id="18"></td>
-        <td class="smlc" id="19"></td>
-        <td class="smlc" id="20"></td>
-      </tr>
-      <tr>
-        <td>Unscheduled Maintenance Labor Cost</td>
-        <td class="umlc" id="1"></td>
-        <td class="umlc" id="2"></td>
-        <td class="umlc" id="3"></td>
-        <td class="umlc" id="4"></td>
-        <td class="umlc" id="5"></td>
-        <td class="umlc" id="6"></td>
-        <td class="umlc" id="7"></td>
-        <td class="umlc" id="8"></td>
-        <td class="umlc" id="9"></td>
-        <td class="umlc" id="10"></td>
-        <td class="umlc" id="11"></td>
-        <td class="umlc" id="12"></td>
-        <td class="umlc" id="13"></td>
-        <td class="umlc" id="14"></td>
-        <td class="umlc" id="15"></td>
-        <td class="umlc" id="16"></td>
-        <td class="umlc" id="17"></td>
-        <td class="umlc" id="18"></td>
-        <td class="umlc" id="19"></td>
-        <td class="umlc" id="20"></td>
-      </tr>
-      <tr>
-        <td>Operation Labor Cost</td>
-        <td class="olc" id="1"></td>
-        <td class="olc" id="2"></td>
-        <td class="olc" id="3"></td>
-        <td class="olc" id="4"></td>
-        <td class="olc" id="5"></td>
-        <td class="olc" id="6"></td>
-        <td class="olc" id="7"></td>
-        <td class="olc" id="8"></td>
-        <td class="olc" id="9"></td>
-        <td class="olc" id="10"></td>
-        <td class="olc" id="11"></td>
-        <td class="olc" id="12"></td>
-        <td class="olc" id="13"></td>
-        <td class="olc" id="14"></td>
-        <td class="olc" id="15"></td>
-        <td class="olc" id="16"></td>
-        <td class="olc" id="17"></td>
-        <td class="olc" id="18"></td>
-        <td class="olc" id="19"></td>
-        <td class="olc" id="20"></td>
-      </tr>
-      <tr>
-        <td>Energy Cost</td>
-        <td class="ec" id="1"></td>
-        <td class="ec" id="2"></td>
-        <td class="ec" id="3"></td>
-        <td class="ec" id="4"></td>
-        <td class="ec" id="5"></td>
-        <td class="ec" id="6"></td>
-        <td class="ec" id="7"></td>
-        <td class="ec" id="8"></td>
-        <td class="ec" id="9"></td>
-        <td class="ec" id="10"></td>
-        <td class="ec" id="11"></td>
-        <td class="ec" id="12"></td>
-        <td class="ec" id="13"></td>
-        <td class="ec" id="14"></td>
-        <td class="ec" id="15"></td>
-        <td class="ec" id="16"></td>
-        <td class="ec" id="17"></td>
-        <td class="ec" id="18"></td>
-        <td class="ec" id="19"></td>
-        <td class="ec" id="20"></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p id="val1"></p>
-  <p id='val2'></p>
 </body>
 </html>

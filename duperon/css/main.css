@@ -1,0 +1,42 @@
+.wrapper {
+  padding: 2.5px;
+}
+
+button a, button a:hover, button a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.input-fields {
+  display: block;
+}
+
+.table-wrapper {
+  overflow-x: scroll;
+}
+
+.td-header {
+  background-color: white;
+}
+
+.actions {
+  padding: 25px 15px;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.actions button {
+  width: 130px;
+  margin-right: 10px;
+}
+
+form {
+  padding-top: 15px;
+  width: 100%;
+}
+
+td input {
+  border: none;
+  width: auto;
+}
